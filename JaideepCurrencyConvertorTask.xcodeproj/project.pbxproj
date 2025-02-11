@@ -7,18 +7,56 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		23D0B8F42D5B12CF003C0A60 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23D0B8F32D5B12C8003C0A60 /* String+Extensions.swift */; };
+		23D0B8F82D5B155D003C0A60 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23D0B8F72D5B1559003C0A60 /* Constants.swift */; };
+		23D0B8FC2D5B1D8B003C0A60 /* CurrencyService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23D0B8FB2D5B1D89003C0A60 /* CurrencyService.swift */; };
+		23D0B8FE2D5B2111003C0A60 /* APIKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23D0B8FD2D5B210D003C0A60 /* APIKeys.swift */; };
+		23D0B9002D5B4CD4003C0A60 /* CurrencyListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23D0B8FF2D5B4CCA003C0A60 /* CurrencyListView.swift */; };
+		23D0B9032D5B4D58003C0A60 /* CurrencyListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23D0B9022D5B4D54003C0A60 /* CurrencyListViewModel.swift */; };
+		23D0B9062D5B4EAC003C0A60 /* BackgroundGradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23D0B9052D5B4EA5003C0A60 /* BackgroundGradient.swift */; };
+		23D0B90C2D5B50B1003C0A60 /* CurrencyPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23D0B90B2D5B50B1003C0A60 /* CurrencyPickerView.swift */; };
+		23D0B90E2D5B5345003C0A60 /* RoundedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23D0B90D2D5B533E003C0A60 /* RoundedTextField.swift */; };
+		23D0B9102D5B6534003C0A60 /* CurrencyRate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23D0B90F2D5B6526003C0A60 /* CurrencyRate.swift */; };
 		23EF99E42D56486400FD96DB /* JaideepCurrencyConvertorTaskApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23EF99E32D56486400FD96DB /* JaideepCurrencyConvertorTaskApp.swift */; };
 		23EF99E62D56486400FD96DB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23EF99E52D56486400FD96DB /* ContentView.swift */; };
 		23EF99E82D56486600FD96DB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 23EF99E72D56486600FD96DB /* Assets.xcassets */; };
 		23EF99EB2D56486600FD96DB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 23EF99EA2D56486600FD96DB /* Preview Assets.xcassets */; };
+		23EF99FC2D564A4600FD96DB /* CurrencyConvertorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23EF99FB2D564A4600FD96DB /* CurrencyConvertorView.swift */; };
+		23EF99FE2D5AFE8500FD96DB /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23EF99FD2D5AFE8500FD96DB /* Currency.swift */; };
+		23EF9A012D5B0C8F00FD96DB /* NetworkConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23EF9A002D5B0C8F00FD96DB /* NetworkConfig.swift */; };
+		23EF9A032D5B0C9B00FD96DB /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23EF9A022D5B0C9B00FD96DB /* Networking.swift */; };
+		23EF9A052D5B0CA400FD96DB /* NetworkUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23EF9A042D5B0CA400FD96DB /* NetworkUtility.swift */; };
+		23EF9A072D5B0E4800FD96DB /* URL+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23EF9A062D5B0E4800FD96DB /* URL+Extensions.swift */; };
+		23EF9A092D5B0F6300FD96DB /* CurrencyConvertorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23EF9A082D5B0F6300FD96DB /* CurrencyConvertorViewModel.swift */; };
+		23EF9A0E2D5B116800FD96DB /* Common.strings in Resources */ = {isa = PBXBuildFile; fileRef = 23EF9A0C2D5B116800FD96DB /* Common.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		23D0B8F32D5B12C8003C0A60 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
+		23D0B8F72D5B1559003C0A60 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		23D0B8FB2D5B1D89003C0A60 /* CurrencyService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyService.swift; sourceTree = "<group>"; };
+		23D0B8FD2D5B210D003C0A60 /* APIKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKeys.swift; sourceTree = "<group>"; };
+		23D0B8FF2D5B4CCA003C0A60 /* CurrencyListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyListView.swift; sourceTree = "<group>"; };
+		23D0B9022D5B4D54003C0A60 /* CurrencyListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyListViewModel.swift; sourceTree = "<group>"; };
+		23D0B9052D5B4EA5003C0A60 /* BackgroundGradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundGradient.swift; sourceTree = "<group>"; };
+		23D0B90B2D5B50B1003C0A60 /* CurrencyPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyPickerView.swift; sourceTree = "<group>"; };
+		23D0B90D2D5B533E003C0A60 /* RoundedTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedTextField.swift; sourceTree = "<group>"; };
+		23D0B90F2D5B6526003C0A60 /* CurrencyRate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyRate.swift; sourceTree = "<group>"; };
 		23EF99E02D56486400FD96DB /* JaideepCurrencyConvertorTask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JaideepCurrencyConvertorTask.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		23EF99E32D56486400FD96DB /* JaideepCurrencyConvertorTaskApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JaideepCurrencyConvertorTaskApp.swift; sourceTree = "<group>"; };
 		23EF99E52D56486400FD96DB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		23EF99E72D56486600FD96DB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		23EF99EA2D56486600FD96DB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		23EF99FB2D564A4600FD96DB /* CurrencyConvertorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyConvertorView.swift; sourceTree = "<group>"; };
+		23EF99FD2D5AFE8500FD96DB /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
+		23EF9A002D5B0C8F00FD96DB /* NetworkConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConfig.swift; sourceTree = "<group>"; };
+		23EF9A022D5B0C9B00FD96DB /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
+		23EF9A042D5B0CA400FD96DB /* NetworkUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkUtility.swift; sourceTree = "<group>"; };
+		23EF9A062D5B0E4800FD96DB /* URL+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Extensions.swift"; sourceTree = "<group>"; };
+		23EF9A082D5B0F6300FD96DB /* CurrencyConvertorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyConvertorViewModel.swift; sourceTree = "<group>"; };
+		23EF9A0D2D5B116800FD96DB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Common.strings; sourceTree = "<group>"; };
+		23EF9A0F2D5B118500FD96DB /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Common.strings; sourceTree = "<group>"; };
+		23EF9A102D5B118B00FD96DB /* hi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = hi; path = hi.lproj/Common.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,6 +70,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		23D0B9012D5B4D4B003C0A60 /* CurrencyList */ = {
+			isa = PBXGroup;
+			children = (
+				23D0B9022D5B4D54003C0A60 /* CurrencyListViewModel.swift */,
+				23D0B8FF2D5B4CCA003C0A60 /* CurrencyListView.swift */,
+			);
+			path = CurrencyList;
+			sourceTree = "<group>";
+		};
+		23D0B9072D5B5084003C0A60 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				23D0B90D2D5B533E003C0A60 /* RoundedTextField.swift */,
+				23D0B90B2D5B50B1003C0A60 /* CurrencyPickerView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		23D0B9082D5B5088003C0A60 /* ViewModifiers */ = {
+			isa = PBXGroup;
+			children = (
+				23D0B9052D5B4EA5003C0A60 /* BackgroundGradient.swift */,
+			);
+			path = ViewModifiers;
+			sourceTree = "<group>";
+		};
 		23EF99D72D56486400FD96DB = {
 			isa = PBXGroup;
 			children = (
@@ -51,9 +115,8 @@
 		23EF99E22D56486400FD96DB /* JaideepCurrencyConvertorTask */ = {
 			isa = PBXGroup;
 			children = (
-				23EF99E32D56486400FD96DB /* JaideepCurrencyConvertorTaskApp.swift */,
-				23EF99E52D56486400FD96DB /* ContentView.swift */,
-				23EF99E72D56486600FD96DB /* Assets.xcassets */,
+				23EF99F22D56487A00FD96DB /* Resources */,
+				23EF99F12D56487200FD96DB /* Sources */,
 				23EF99E92D56486600FD96DB /* Preview Content */,
 			);
 			path = JaideepCurrencyConvertorTask;
@@ -65,6 +128,127 @@
 				23EF99EA2D56486600FD96DB /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		23EF99F12D56487200FD96DB /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				23EF99F32D56488900FD96DB /* App */,
+				23EF99F92D5648E500FD96DB /* Models */,
+				23EF99F42D56489200FD96DB /* Modules */,
+				23EF99F52D56489900FD96DB /* Utility */,
+				23EF99F82D5648CD00FD96DB /* Views */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		23EF99F22D56487A00FD96DB /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				23EF9A0B2D5B114F00FD96DB /* Strings */,
+				23EF99E72D56486600FD96DB /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		23EF99F32D56488900FD96DB /* App */ = {
+			isa = PBXGroup;
+			children = (
+				23EF99E52D56486400FD96DB /* ContentView.swift */,
+				23EF99E32D56486400FD96DB /* JaideepCurrencyConvertorTaskApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		23EF99F42D56489200FD96DB /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				23EF99FA2D5649F500FD96DB /* CurrencyConvertor */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		23EF99F52D56489900FD96DB /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				23EF9A112D5B128E00FD96DB /* Constants */,
+				23EF99FF2D5B00C500FD96DB /* Convertor */,
+				23EF9A0A2D5B10DB00FD96DB /* Localisation */,
+				23EF99F62D5648A300FD96DB /* Network */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
+		23EF99F62D5648A300FD96DB /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				23EF9A002D5B0C8F00FD96DB /* NetworkConfig.swift */,
+				23EF9A022D5B0C9B00FD96DB /* Networking.swift */,
+				23EF9A042D5B0CA400FD96DB /* NetworkUtility.swift */,
+				23EF9A062D5B0E4800FD96DB /* URL+Extensions.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		23EF99F82D5648CD00FD96DB /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				23D0B9072D5B5084003C0A60 /* Views */,
+				23D0B9082D5B5088003C0A60 /* ViewModifiers */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		23EF99F92D5648E500FD96DB /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				23D0B90F2D5B6526003C0A60 /* CurrencyRate.swift */,
+				23EF99FD2D5AFE8500FD96DB /* Currency.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		23EF99FA2D5649F500FD96DB /* CurrencyConvertor */ = {
+			isa = PBXGroup;
+			children = (
+				23D0B9012D5B4D4B003C0A60 /* CurrencyList */,
+				23EF99FB2D564A4600FD96DB /* CurrencyConvertorView.swift */,
+				23EF9A082D5B0F6300FD96DB /* CurrencyConvertorViewModel.swift */,
+			);
+			path = CurrencyConvertor;
+			sourceTree = "<group>";
+		};
+		23EF99FF2D5B00C500FD96DB /* Convertor */ = {
+			isa = PBXGroup;
+			children = (
+				23D0B8FB2D5B1D89003C0A60 /* CurrencyService.swift */,
+			);
+			path = Convertor;
+			sourceTree = "<group>";
+		};
+		23EF9A0A2D5B10DB00FD96DB /* Localisation */ = {
+			isa = PBXGroup;
+			children = (
+				23D0B8F32D5B12C8003C0A60 /* String+Extensions.swift */,
+			);
+			path = Localisation;
+			sourceTree = "<group>";
+		};
+		23EF9A0B2D5B114F00FD96DB /* Strings */ = {
+			isa = PBXGroup;
+			children = (
+				23EF9A0C2D5B116800FD96DB /* Common.strings */,
+			);
+			path = Strings;
+			sourceTree = "<group>";
+		};
+		23EF9A112D5B128E00FD96DB /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				23D0B8FD2D5B210D003C0A60 /* APIKeys.swift */,
+				23D0B8F72D5B1559003C0A60 /* Constants.swift */,
+			);
+			path = Constants;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -109,6 +293,8 @@
 			knownRegions = (
 				en,
 				Base,
+				ja,
+				hi,
 			);
 			mainGroup = 23EF99D72D56486400FD96DB;
 			productRefGroup = 23EF99E12D56486400FD96DB /* Products */;
@@ -127,6 +313,7 @@
 			files = (
 				23EF99EB2D56486600FD96DB /* Preview Assets.xcassets in Resources */,
 				23EF99E82D56486600FD96DB /* Assets.xcassets in Resources */,
+				23EF9A0E2D5B116800FD96DB /* Common.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,12 +324,42 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				23D0B8F42D5B12CF003C0A60 /* String+Extensions.swift in Sources */,
+				23EF99FE2D5AFE8500FD96DB /* Currency.swift in Sources */,
+				23D0B8FE2D5B2111003C0A60 /* APIKeys.swift in Sources */,
+				23D0B9002D5B4CD4003C0A60 /* CurrencyListView.swift in Sources */,
+				23D0B9102D5B6534003C0A60 /* CurrencyRate.swift in Sources */,
+				23D0B9032D5B4D58003C0A60 /* CurrencyListViewModel.swift in Sources */,
+				23EF9A012D5B0C8F00FD96DB /* NetworkConfig.swift in Sources */,
+				23D0B8FC2D5B1D8B003C0A60 /* CurrencyService.swift in Sources */,
 				23EF99E62D56486400FD96DB /* ContentView.swift in Sources */,
+				23EF9A032D5B0C9B00FD96DB /* Networking.swift in Sources */,
 				23EF99E42D56486400FD96DB /* JaideepCurrencyConvertorTaskApp.swift in Sources */,
+				23EF9A072D5B0E4800FD96DB /* URL+Extensions.swift in Sources */,
+				23EF99FC2D564A4600FD96DB /* CurrencyConvertorView.swift in Sources */,
+				23EF9A052D5B0CA400FD96DB /* NetworkUtility.swift in Sources */,
+				23EF9A092D5B0F6300FD96DB /* CurrencyConvertorViewModel.swift in Sources */,
+				23D0B9062D5B4EAC003C0A60 /* BackgroundGradient.swift in Sources */,
+				23D0B8F82D5B155D003C0A60 /* Constants.swift in Sources */,
+				23D0B90C2D5B50B1003C0A60 /* CurrencyPickerView.swift in Sources */,
+				23D0B90E2D5B5345003C0A60 /* RoundedTextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		23EF9A0C2D5B116800FD96DB /* Common.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				23EF9A0D2D5B116800FD96DB /* en */,
+				23EF9A0F2D5B118500FD96DB /* ja */,
+				23EF9A102D5B118B00FD96DB /* hi */,
+			);
+			name = Common.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		23EF99EC2D56486600FD96DB /* Debug */ = {
@@ -150,6 +367,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -213,6 +431,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";

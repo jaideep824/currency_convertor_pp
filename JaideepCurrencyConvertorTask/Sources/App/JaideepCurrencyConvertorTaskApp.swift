@@ -11,7 +11,9 @@ import SwiftUI
 struct JaideepCurrencyConvertorTaskApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            CurrencyConvertorView(
+                viewModel: .init(currencyService: CurrencyService())
+            )
         }
     }
 }

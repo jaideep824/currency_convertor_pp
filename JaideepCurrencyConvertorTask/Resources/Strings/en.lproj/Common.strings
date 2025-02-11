@@ -1,0 +1,11 @@
+/* 
+  Common.strings
+  JaideepCurrencyConvertorTask
+
+  Created by Jaideep on 11/02/25.
+  
+*/
+
+"enterAValue" = "Please enter a value";
+"selectConversionCurrency" = "Select Currency to convert";
+"convertor" = "Convertor";

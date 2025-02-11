@@ -1,0 +1,11 @@
+/* 
+  Common.strings
+  JaideepCurrencyConvertorTask
+
+  Created by Jaideep on 11/02/25.
+  
+*/
+
+"enterAValue" = "値を入力してください";
+"selectConversionCurrency" = "変換する通貨を選択してください";
+"convertor" = "コンバータ";
