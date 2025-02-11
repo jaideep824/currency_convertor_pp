@@ -5,15 +5,15 @@
 //  Created by Jaideep on 07/02/25.
 //
 
+import SwiftData
 import SwiftUI
 
 @main
 struct JaideepCurrencyConvertorTaskApp: App {
     var body: some Scene {
         WindowGroup {
-            CurrencyConvertorView(
-                viewModel: .init(currencyService: CurrencyService())
-            )
+            ContentView()
+                .modelContainer(for: CurrencyRate.self)
         }
     }
 }

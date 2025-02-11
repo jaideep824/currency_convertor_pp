@@ -20,13 +20,14 @@ struct CurrencyListView: View {
                     VStack(alignment: .center) {
                         Text(viewModel.formattedCurrencyRate(for: currency))
                             .foregroundStyle(.appWhite)
-                            .font(.body.bold())
+                            .font(.caption.bold())
                         Text(currency.code)
                             .foregroundStyle(.secondary)
-                            .font(.caption.bold())
+                            .font(.caption2)
                         
                     }
                     .frame(height: 50)
+                    .frame(maxWidth: .infinity)
                     .padding()
                     .background(.appGreen)
                     .clipShape(RoundedRectangle(cornerRadius: 16))

@@ -19,7 +19,7 @@ class Networking {
     }
     
     // MARK: - Exposed Functions
-    func fetchData<T: Codable>(with config: NetworkConfig, andParams params: [String: String] ,decoder: JSONDecoder = JSONDecoder()) -> Future<T, NetworkError> {
+    func fetchData<T: Decodable>(with config: NetworkConfig, andParams params: [String: String] ,decoder: JSONDecoder = JSONDecoder()) -> Future<T, NetworkError> {
         return Future { [weak self] promise in
             guard let `self` = self else {
                 promise(.failure(.deinitialisedBeforeHandling))

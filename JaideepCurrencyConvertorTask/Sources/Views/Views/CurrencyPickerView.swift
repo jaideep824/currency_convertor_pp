@@ -10,14 +10,16 @@ import SwiftUI
 struct CurrencyPickerView: View {
     let placeholder: String
     let currencies: [Currency]
-    @Binding var selectedCurrency: Currency
+    @Binding var selectedCurrency: String
     
     var body: some View {
         Picker(placeholder, selection: $selectedCurrency) {
             ForEach(currencies) { currency in
                 Text(currency.code)
+                    .tag(currency.id)
                     .foregroundStyle(.appYellow)
                     .bold()
+                    
             }
         }
     }
@@ -26,5 +28,5 @@ struct CurrencyPickerView: View {
 #Preview {
     CurrencyPickerView(placeholder: "selectConversionCurrency".localised,
                        currencies: [.example],
-                       selectedCurrency: .constant(.example))
+                       selectedCurrency: .constant(Currency.example.code))
 }

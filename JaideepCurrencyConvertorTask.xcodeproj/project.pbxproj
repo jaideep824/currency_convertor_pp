@@ -17,8 +17,9 @@
 		23D0B90C2D5B50B1003C0A60 /* CurrencyPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23D0B90B2D5B50B1003C0A60 /* CurrencyPickerView.swift */; };
 		23D0B90E2D5B5345003C0A60 /* RoundedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23D0B90D2D5B533E003C0A60 /* RoundedTextField.swift */; };
 		23D0B9102D5B6534003C0A60 /* CurrencyRate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23D0B90F2D5B6526003C0A60 /* CurrencyRate.swift */; };
+		23D0B9142D5B7E2D003C0A60 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23D0B9132D5B7E2D003C0A60 /* ContentView.swift */; };
+		23D0B9172D5B8B95003C0A60 /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23D0B9162D5B8B8F003C0A60 /* Date+Extensions.swift */; };
 		23EF99E42D56486400FD96DB /* JaideepCurrencyConvertorTaskApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23EF99E32D56486400FD96DB /* JaideepCurrencyConvertorTaskApp.swift */; };
-		23EF99E62D56486400FD96DB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23EF99E52D56486400FD96DB /* ContentView.swift */; };
 		23EF99E82D56486600FD96DB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 23EF99E72D56486600FD96DB /* Assets.xcassets */; };
 		23EF99EB2D56486600FD96DB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 23EF99EA2D56486600FD96DB /* Preview Assets.xcassets */; };
 		23EF99FC2D564A4600FD96DB /* CurrencyConvertorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23EF99FB2D564A4600FD96DB /* CurrencyConvertorView.swift */; };
@@ -42,9 +43,10 @@
 		23D0B90B2D5B50B1003C0A60 /* CurrencyPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyPickerView.swift; sourceTree = "<group>"; };
 		23D0B90D2D5B533E003C0A60 /* RoundedTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedTextField.swift; sourceTree = "<group>"; };
 		23D0B90F2D5B6526003C0A60 /* CurrencyRate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyRate.swift; sourceTree = "<group>"; };
+		23D0B9132D5B7E2D003C0A60 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		23D0B9162D5B8B8F003C0A60 /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
 		23EF99E02D56486400FD96DB /* JaideepCurrencyConvertorTask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JaideepCurrencyConvertorTask.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		23EF99E32D56486400FD96DB /* JaideepCurrencyConvertorTaskApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JaideepCurrencyConvertorTaskApp.swift; sourceTree = "<group>"; };
-		23EF99E52D56486400FD96DB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		23EF99E72D56486600FD96DB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		23EF99EA2D56486600FD96DB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		23EF99FB2D564A4600FD96DB /* CurrencyConvertorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyConvertorView.swift; sourceTree = "<group>"; };
@@ -94,6 +96,14 @@
 				23D0B9052D5B4EA5003C0A60 /* BackgroundGradient.swift */,
 			);
 			path = ViewModifiers;
+			sourceTree = "<group>";
+		};
+		23D0B9152D5B8B82003C0A60 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				23D0B9162D5B8B8F003C0A60 /* Date+Extensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		23EF99D72D56486400FD96DB = {
@@ -154,7 +164,7 @@
 		23EF99F32D56488900FD96DB /* App */ = {
 			isa = PBXGroup;
 			children = (
-				23EF99E52D56486400FD96DB /* ContentView.swift */,
+				23D0B9132D5B7E2D003C0A60 /* ContentView.swift */,
 				23EF99E32D56486400FD96DB /* JaideepCurrencyConvertorTaskApp.swift */,
 			);
 			path = App;
@@ -173,6 +183,7 @@
 			children = (
 				23EF9A112D5B128E00FD96DB /* Constants */,
 				23EF99FF2D5B00C500FD96DB /* Convertor */,
+				23D0B9152D5B8B82003C0A60 /* Extensions */,
 				23EF9A0A2D5B10DB00FD96DB /* Localisation */,
 				23EF99F62D5648A300FD96DB /* Network */,
 			);
@@ -324,6 +335,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				23D0B9172D5B8B95003C0A60 /* Date+Extensions.swift in Sources */,
 				23D0B8F42D5B12CF003C0A60 /* String+Extensions.swift in Sources */,
 				23EF99FE2D5AFE8500FD96DB /* Currency.swift in Sources */,
 				23D0B8FE2D5B2111003C0A60 /* APIKeys.swift in Sources */,
@@ -332,7 +344,7 @@
 				23D0B9032D5B4D58003C0A60 /* CurrencyListViewModel.swift in Sources */,
 				23EF9A012D5B0C8F00FD96DB /* NetworkConfig.swift in Sources */,
 				23D0B8FC2D5B1D8B003C0A60 /* CurrencyService.swift in Sources */,
-				23EF99E62D56486400FD96DB /* ContentView.swift in Sources */,
+				23D0B9142D5B7E2D003C0A60 /* ContentView.swift in Sources */,
 				23EF9A032D5B0C9B00FD96DB /* Networking.swift in Sources */,
 				23EF99E42D56486400FD96DB /* JaideepCurrencyConvertorTaskApp.swift in Sources */,
 				23EF9A072D5B0E4800FD96DB /* URL+Extensions.swift in Sources */,

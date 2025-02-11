@@ -7,21 +7,28 @@
 
 import Combine
 import Foundation
+import SwiftData
 
 class CurrencyService {
     // MARK: Variables
+    private let modelContext: ModelContext
     private var cancellables = Set<AnyCancellable>()
     private var currencyRate: CurrencyRate?
     
+    // MARK: Initialisation
+    init(modelContext: ModelContext) {
+        self.modelContext = modelContext
+    }
+    
     // MARK: -  Exposed Functions
-    func fetchRates(baseCurrency: String, completion: @escaping (Result<CurrencyRate, Error>) -> Void) {
-        if let savedRates = fetchSavedRates(baseCurrency: baseCurrency), !isRatesExpired(timestamp: savedRates.refreshedTimestamp) {
+    func fetchRates(baseCurrency: String, forceReload: Bool = false, completion: @escaping (Result<CurrencyRate, Error>) -> Void) {
+        if let savedRates = fetchSavedRates(baseCurrency: baseCurrency), !isRatesExpired(timestamp: savedRates.refreshedTimestamp), forceReload == false {
+            self.currencyRate = savedRates
             completion(.success(savedRates))
         } else {
             fetchRatesFromAPI(baseCurrency: baseCurrency) {[weak self] result in
                 switch result {
                 case .success(let newRates):
-                    // TODO: Save reates
                     self?.currencyRate = newRates
                     completion(.success(newRates))
                 case .failure(let error):
@@ -70,9 +77,7 @@ class CurrencyService {
         debugPrint("Error: Invalid target currency code.")
         return nil
     }
-}
-
-private extension CurrencyService {
+    
     func isRatesExpired(timestamp: Int?) -> Bool {
         guard let timestamp else { return true }
         let date = Date(timeIntervalSince1970: TimeInterval(timestamp))
@@ -80,7 +85,28 @@ private extension CurrencyService {
     }
     
     func fetchSavedRates(baseCurrency: String) -> CurrencyRate? {
-        return nil
+        let descriptor = FetchDescriptor<CurrencyRate>(sortBy: [SortDescriptor(\.refreshedTimestamp, order: .reverse)])
+        
+        do {
+            let results = try modelContext.fetch(descriptor)
+            return results.first
+        } catch {
+            debugPrint("Failed to fetch: \(error)")
+            return nil
+        }
+    }
+    
+    func saveFetchedRates(currencyRate: CurrencyRate?) async {
+        guard let currencyRate else { return }
+        
+        await MainActor.run {
+            modelContext.insert(currencyRate)
+            do {
+                try modelContext.save()
+            } catch {
+                debugPrint(error.localizedDescription)
+            }
+        }
     }
     
     func fetchRatesFromAPI(baseCurrency: String, completionHandler: @escaping (Result<CurrencyRate, NetworkError>) -> Void) {
@@ -99,8 +125,11 @@ private extension CurrencyService {
                 case .finished:
                     debugPrint("Finished successfully.")
                 }
-            } receiveValue: { rates in
+            } receiveValue: {[weak self] rates in
                 completionHandler(.success(rates))
+                Task {
+                    await self?.saveFetchedRates(currencyRate: rates)
+                }
             }
             .store(in: &cancellables)
     }

@@ -10,10 +10,10 @@ import SwiftUI
 struct RoundedCurrencyTextField: View {
     let placeholder: String
     let currencyFormat: String
-    @Binding var inputValue: Double
+    @Binding var inputValue: String
     
     var body: some View {
-        TextField(placeholder, value: $inputValue, format: .currency(code: currencyFormat))
+        TextField(placeholder, text: $inputValue)
             .padding(.horizontal, 12)
             .frame(height: 50)
             .background(.appWhite)
@@ -24,5 +24,5 @@ struct RoundedCurrencyTextField: View {
 #Preview {
     RoundedCurrencyTextField(placeholder: "enterAValue".localised,
                              currencyFormat: "USD",
-                             inputValue: .constant(10))
+                             inputValue: .constant("10"))
 }

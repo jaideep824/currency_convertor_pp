@@ -5,16 +5,15 @@
 //  Created by Jaideep on 07/02/25.
 //
 
+import SwiftData
 import SwiftUI
 
-// TODO: ViewModel
 // TODO: Test Cases
-// TODO: Local storage
-// TODO: Rate Fetch from remote
 // TODO: Accessiblity
 
 struct CurrencyConvertorView: View {
     // MARK: Properties
+    @Environment(\.modelContext) private var modelContext
     @StateObject private var viewModel: ViewModel
    
     // MARK: Body
@@ -23,23 +22,38 @@ struct CurrencyConvertorView: View {
             VStack(spacing: 24) {
                 HStack {
                     RoundedCurrencyTextField(placeholder: "enterAValue".localised,
-                                             currencyFormat: viewModel.selectedCurrency.code,
+                                             currencyFormat: viewModel.selectedCurrencyCode,
                                              inputValue: $viewModel.amount)
                     
                     
                     CurrencyPickerView(placeholder: "selectConversionCurrency".localised,
                                        currencies: viewModel.currencyList(),
-                                       selectedCurrency: $viewModel.selectedCurrency)
+                                       selectedCurrency: $viewModel.selectedCurrencyCode)
                         .pickerStyle(.menu)
                         .tint(.appWhite)
                 }
                 
                 CurrencyListView(viewModel: .init(curriencies: viewModel.convertedCurriences()))
+                
+                if let lastSyncTime = viewModel.lastSyncTime() {
+                    Text("Using rates: \(lastSyncTime)")
+                        .font(.footnote.italic())
+                        .foregroundStyle(.appYellow)
+                }
             }
-            .padding()
+            .navigationBarTitleDisplayMode(.inline)
+            .tint(.appWhite)
+            .padding([.horizontal, .top])
             .navigationTitle("convertor".localised)
             .applyBackgroundGradient()
-            .onAppear(perform: viewModel.refreshCurrency)
+            .onAppear {
+                viewModel.refreshCurrency()
+            }
+            .toolbar {
+                ToolbarItem(placement: .topBarTrailing) {
+                    Button("Refresh", systemImage: "arrow.clockwise", action: viewModel.forceRefreshDataFromRemote)
+                }
+            }
         }
     }
     
@@ -49,8 +63,16 @@ struct CurrencyConvertorView: View {
     }
 }
 
+struct CurrencyConvertorViewPreview: View {
+    @Environment(\.modelContext) private var modelContext
+    var body: some View {
+        CurrencyConvertorView(
+            viewModel: .init(currencyService: CurrencyService(modelContext: modelContext))
+        )
+    }
+}
+
 #Preview {
-    CurrencyConvertorView(
-        viewModel: .init(currencyService: CurrencyService())
-    )
+    CurrencyConvertorViewPreview()
+        .modelContainer(for: CurrencyRate.self)
 }

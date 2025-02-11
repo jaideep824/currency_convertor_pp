@@ -2,20 +2,18 @@
 //  ContentView.swift
 //  JaideepCurrencyConvertorTask
 //
-//  Created by Jaideep on 07/02/25.
+//  Created by Jaideep on 11/02/25.
 //
 
 import SwiftUI
 
 struct ContentView: View {
+    @Environment(\.modelContext) private var modelContext
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
-        }
-        .padding()
+        CurrencyConvertorView(
+            viewModel: .init(currencyService:CurrencyService(modelContext: modelContext))
+        )
     }
 }
 
