@@ -8,12 +8,8 @@
 import SwiftData
 import SwiftUI
 
-// TODO: Test Cases
-// TODO: Accessiblity
-
 struct CurrencyConvertorView: View {
     // MARK: Properties
-    @Environment(\.modelContext) private var modelContext
     @StateObject private var viewModel: ViewModel
    
     // MARK: Body
@@ -67,12 +63,12 @@ struct CurrencyConvertorViewPreview: View {
     @Environment(\.modelContext) private var modelContext
     var body: some View {
         CurrencyConvertorView(
-            viewModel: .init(currencyService: CurrencyService(modelContext: modelContext))
+            viewModel: .init(currencyHandlingService: CurrencyHandlingService(modelContext: modelContext))
         )
     }
 }
 
 #Preview {
     CurrencyConvertorViewPreview()
-        .modelContainer(for: CurrencyRate.self)
+        .modelContainer(for: CurrencyRateData.self)
 }

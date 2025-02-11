@@ -9,14 +9,14 @@
 /* Begin PBXBuildFile section */
 		23D0B8F42D5B12CF003C0A60 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23D0B8F32D5B12C8003C0A60 /* String+Extensions.swift */; };
 		23D0B8F82D5B155D003C0A60 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23D0B8F72D5B1559003C0A60 /* Constants.swift */; };
-		23D0B8FC2D5B1D8B003C0A60 /* CurrencyService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23D0B8FB2D5B1D89003C0A60 /* CurrencyService.swift */; };
+		23D0B8FC2D5B1D8B003C0A60 /* CurrencyHandlingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23D0B8FB2D5B1D89003C0A60 /* CurrencyHandlingService.swift */; };
 		23D0B8FE2D5B2111003C0A60 /* APIKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23D0B8FD2D5B210D003C0A60 /* APIKeys.swift */; };
 		23D0B9002D5B4CD4003C0A60 /* CurrencyListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23D0B8FF2D5B4CCA003C0A60 /* CurrencyListView.swift */; };
 		23D0B9032D5B4D58003C0A60 /* CurrencyListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23D0B9022D5B4D54003C0A60 /* CurrencyListViewModel.swift */; };
 		23D0B9062D5B4EAC003C0A60 /* BackgroundGradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23D0B9052D5B4EA5003C0A60 /* BackgroundGradient.swift */; };
 		23D0B90C2D5B50B1003C0A60 /* CurrencyPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23D0B90B2D5B50B1003C0A60 /* CurrencyPickerView.swift */; };
 		23D0B90E2D5B5345003C0A60 /* RoundedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23D0B90D2D5B533E003C0A60 /* RoundedTextField.swift */; };
-		23D0B9102D5B6534003C0A60 /* CurrencyRate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23D0B90F2D5B6526003C0A60 /* CurrencyRate.swift */; };
+		23D0B9102D5B6534003C0A60 /* CurrencyRateData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23D0B90F2D5B6526003C0A60 /* CurrencyRateData.swift */; };
 		23D0B9142D5B7E2D003C0A60 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23D0B9132D5B7E2D003C0A60 /* ContentView.swift */; };
 		23D0B9172D5B8B95003C0A60 /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23D0B9162D5B8B8F003C0A60 /* Date+Extensions.swift */; };
 		23EF99E42D56486400FD96DB /* JaideepCurrencyConvertorTaskApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23EF99E32D56486400FD96DB /* JaideepCurrencyConvertorTaskApp.swift */; };
@@ -35,14 +35,14 @@
 /* Begin PBXFileReference section */
 		23D0B8F32D5B12C8003C0A60 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		23D0B8F72D5B1559003C0A60 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		23D0B8FB2D5B1D89003C0A60 /* CurrencyService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyService.swift; sourceTree = "<group>"; };
+		23D0B8FB2D5B1D89003C0A60 /* CurrencyHandlingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyHandlingService.swift; sourceTree = "<group>"; };
 		23D0B8FD2D5B210D003C0A60 /* APIKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKeys.swift; sourceTree = "<group>"; };
 		23D0B8FF2D5B4CCA003C0A60 /* CurrencyListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyListView.swift; sourceTree = "<group>"; };
 		23D0B9022D5B4D54003C0A60 /* CurrencyListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyListViewModel.swift; sourceTree = "<group>"; };
 		23D0B9052D5B4EA5003C0A60 /* BackgroundGradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundGradient.swift; sourceTree = "<group>"; };
 		23D0B90B2D5B50B1003C0A60 /* CurrencyPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyPickerView.swift; sourceTree = "<group>"; };
 		23D0B90D2D5B533E003C0A60 /* RoundedTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedTextField.swift; sourceTree = "<group>"; };
-		23D0B90F2D5B6526003C0A60 /* CurrencyRate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyRate.swift; sourceTree = "<group>"; };
+		23D0B90F2D5B6526003C0A60 /* CurrencyRateData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyRateData.swift; sourceTree = "<group>"; };
 		23D0B9132D5B7E2D003C0A60 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		23D0B9162D5B8B8F003C0A60 /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
 		23EF99E02D56486400FD96DB /* JaideepCurrencyConvertorTask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JaideepCurrencyConvertorTask.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -213,7 +213,7 @@
 		23EF99F92D5648E500FD96DB /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				23D0B90F2D5B6526003C0A60 /* CurrencyRate.swift */,
+				23D0B90F2D5B6526003C0A60 /* CurrencyRateData.swift */,
 				23EF99FD2D5AFE8500FD96DB /* Currency.swift */,
 			);
 			path = Models;
@@ -232,7 +232,7 @@
 		23EF99FF2D5B00C500FD96DB /* Convertor */ = {
 			isa = PBXGroup;
 			children = (
-				23D0B8FB2D5B1D89003C0A60 /* CurrencyService.swift */,
+				23D0B8FB2D5B1D89003C0A60 /* CurrencyHandlingService.swift */,
 			);
 			path = Convertor;
 			sourceTree = "<group>";
@@ -340,10 +340,10 @@
 				23EF99FE2D5AFE8500FD96DB /* Currency.swift in Sources */,
 				23D0B8FE2D5B2111003C0A60 /* APIKeys.swift in Sources */,
 				23D0B9002D5B4CD4003C0A60 /* CurrencyListView.swift in Sources */,
-				23D0B9102D5B6534003C0A60 /* CurrencyRate.swift in Sources */,
+				23D0B9102D5B6534003C0A60 /* CurrencyRateData.swift in Sources */,
 				23D0B9032D5B4D58003C0A60 /* CurrencyListViewModel.swift in Sources */,
 				23EF9A012D5B0C8F00FD96DB /* NetworkConfig.swift in Sources */,
-				23D0B8FC2D5B1D8B003C0A60 /* CurrencyService.swift in Sources */,
+				23D0B8FC2D5B1D8B003C0A60 /* CurrencyHandlingService.swift in Sources */,
 				23D0B9142D5B7E2D003C0A60 /* ContentView.swift in Sources */,
 				23EF9A032D5B0C9B00FD96DB /* Networking.swift in Sources */,
 				23EF99E42D56486400FD96DB /* JaideepCurrencyConvertorTaskApp.swift in Sources */,

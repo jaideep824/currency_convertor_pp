@@ -9,11 +9,11 @@ import Combine
 import Foundation
 import SwiftData
 
-class CurrencyService {
+class CurrencyHandlingService {
     // MARK: Variables
     private let modelContext: ModelContext
     private var cancellables = Set<AnyCancellable>()
-    private var currencyRate: CurrencyRate?
+    private var currencyRate: CurrencyRateData?
     
     // MARK: Initialisation
     init(modelContext: ModelContext) {
@@ -21,7 +21,7 @@ class CurrencyService {
     }
     
     // MARK: -  Exposed Functions
-    func fetchRates(baseCurrency: String, forceReload: Bool = false, completion: @escaping (Result<CurrencyRate, Error>) -> Void) {
+    func fetchRates(baseCurrency: String, forceReload: Bool = false, completion: @escaping (Result<CurrencyRateData, Error>) -> Void) {
         if let savedRates = fetchSavedRates(baseCurrency: baseCurrency), !isRatesExpired(timestamp: savedRates.refreshedTimestamp), forceReload == false {
             self.currencyRate = savedRates
             completion(.success(savedRates))
@@ -84,8 +84,8 @@ class CurrencyService {
         return date.addingTimeInterval(Constants.rateRefreshDurationInSec) < Date()
     }
     
-    func fetchSavedRates(baseCurrency: String) -> CurrencyRate? {
-        let descriptor = FetchDescriptor<CurrencyRate>(sortBy: [SortDescriptor(\.refreshedTimestamp, order: .reverse)])
+    func fetchSavedRates(baseCurrency: String) -> CurrencyRateData? {
+        let descriptor = FetchDescriptor<CurrencyRateData>(sortBy: [SortDescriptor(\.refreshedTimestamp, order: .reverse)])
         
         do {
             let results = try modelContext.fetch(descriptor)
@@ -96,7 +96,7 @@ class CurrencyService {
         }
     }
     
-    func saveFetchedRates(currencyRate: CurrencyRate?) async {
+    func saveFetchedRates(currencyRate: CurrencyRateData?) async {
         guard let currencyRate else { return }
         
         await MainActor.run {
@@ -109,12 +109,12 @@ class CurrencyService {
         }
     }
     
-    func fetchRatesFromAPI(baseCurrency: String, completionHandler: @escaping (Result<CurrencyRate, NetworkError>) -> Void) {
+    func fetchRatesFromAPI(baseCurrency: String, completionHandler: @escaping (Result<CurrencyRateData, NetworkError>) -> Void) {
         let apiConfig = NetworkConfig(endPoint: .currencyRates)
         let params = ["app_id": APIKeys.openExchange,
                       "base": Constants.defaultCurrencyCode]
         
-        let response: Future<CurrencyRate, NetworkError> = Networking.shared.fetchData(with: apiConfig, andParams: params)
+        let response: Future<CurrencyRateData, NetworkError> = Networking.shared.fetchData(with: apiConfig, andParams: params)
         response
             .receive(on: RunLoop.main)
             .sink { completion in

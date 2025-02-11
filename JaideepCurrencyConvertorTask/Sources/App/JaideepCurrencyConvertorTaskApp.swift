@@ -13,7 +13,7 @@ struct JaideepCurrencyConvertorTaskApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
-                .modelContainer(for: CurrencyRate.self)
+                .modelContainer(for: CurrencyRateData.self)
         }
     }
 }

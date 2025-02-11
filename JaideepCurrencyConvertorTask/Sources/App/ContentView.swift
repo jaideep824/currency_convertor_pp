@@ -12,7 +12,7 @@ struct ContentView: View {
     
     var body: some View {
         CurrencyConvertorView(
-            viewModel: .init(currencyService:CurrencyService(modelContext: modelContext))
+            viewModel: .init(currencyHandlingService:CurrencyHandlingService(modelContext: modelContext))
         )
     }
 }

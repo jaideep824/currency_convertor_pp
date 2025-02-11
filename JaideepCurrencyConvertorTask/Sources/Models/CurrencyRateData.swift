@@ -9,7 +9,7 @@ import Foundation
 import SwiftData
 
 @Model
-class CurrencyRate: Decodable, Identifiable {
+class CurrencyRateData: Decodable, Identifiable {
     var id: UUID
     var refreshedTimestamp: Int?
     var baseCurrencyCode: String?

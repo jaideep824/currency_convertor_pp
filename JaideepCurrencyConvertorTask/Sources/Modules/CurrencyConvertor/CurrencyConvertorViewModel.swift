@@ -13,25 +13,25 @@ extension CurrencyConvertorView {
     class ViewModel: ObservableObject {
         // MARK: - Properties
         // MARK: state variables
-        private var cancellables = Set<AnyCancellable>()
         @Published var amount: String = "0.00"
         @Published var selectedCurrencyCode = Constants.defaultCurrencyCode
-        @Published var currencyRate: CurrencyRate?
+        @Published var currencyRateData: CurrencyRateData?
         @Published var debouncedConvertedCurrencies: [Currency] = []
         
         // MARK: stored variables
-        private let currencyService: CurrencyService
+        private var cancellables = Set<AnyCancellable>()
+        private let currencyHandlingService: CurrencyHandlingService
         
         // MARK: - Initialistions
-        init(currencyService: CurrencyService) {
-            self.currencyService = currencyService
+        init(currencyHandlingService: CurrencyHandlingService) {
+            self.currencyHandlingService = currencyHandlingService
             setupDebounce()
         }
         
         // MARK: - Functions
         // MARK: Get Functions
         func currencyList() -> [Currency] {
-            currencyRate?.currencies ?? []
+            currencyRateData?.currencies ?? []
         }
         
         func convertedCurriences() -> [Currency] {
@@ -39,7 +39,7 @@ extension CurrencyConvertorView {
         }
         
         func lastSyncTime() -> String? {
-            guard let refreshedTimestamp = currencyRate?.refreshedTimestamp else {
+            guard let refreshedTimestamp = currencyRateData?.refreshedTimestamp else {
                 return nil
             }
             
@@ -50,13 +50,26 @@ extension CurrencyConvertorView {
             refreshCurrency(forceReload: true)
         }
         
+        func convertCurriences(amount: String, from: String, utilising data: CurrencyRateData?) -> [Currency] {
+            guard let amountDoubleValue = Double(amount) else { return [] }
+            guard let currencies = data?.currencies else { return [] }
+            
+            let tempCurrencies: [Currency] = currencies.map {
+                var currency = Currency(code: $0.code, baseRate: $0.baseRate)
+                currency.convertedRate = currencyHandlingService.convert(amountDoubleValue, from: selectedCurrencyCode, to: $0.code)
+                return currency
+            }
+            
+            return tempCurrencies
+        }
+        
         // MARK: Set Function
         // MARK: Services
         func refreshCurrency(forceReload: Bool = false) {
-            currencyService.fetchRates(baseCurrency: Constants.defaultCurrencyCode, forceReload: forceReload) {[weak self] result in
+            currencyHandlingService.fetchRates(baseCurrency: Constants.defaultCurrencyCode, forceReload: forceReload) {[weak self] result in
                 switch result {
                 case .success(let rate):
-                    self?.currencyRate = rate
+                    self?.currencyRateData = rate
                 case .failure(let error):
                     debugPrint("Error fetching rates: \(error)")
                 }
@@ -66,25 +79,12 @@ extension CurrencyConvertorView {
 }
 
 private extension CurrencyConvertorView.ViewModel {
-    func convertCurriences(amount: String, from: String) -> [Currency] {
-        guard let amountDoubleValue = Double(amount) else { return [] }
-        guard let currencies = currencyRate?.currencies else { return [] }
-        
-        let tempCurrencies: [Currency] = currencies.map {
-            var currency = Currency(code: $0.code, baseRate: $0.baseRate)
-            currency.convertedRate = currencyService.convert(amountDoubleValue, from: selectedCurrencyCode, to: $0.code)
-            return currency
-        }
-        
-        return tempCurrencies
-    }
-    
     func setupDebounce() {
         Publishers.CombineLatest($amount, $selectedCurrencyCode)
             .debounce(for: .seconds(0.5), scheduler: RunLoop.main)
             .sink { [weak self] _ in
                 guard let `self` = self else { return }
-                self.debouncedConvertedCurrencies = self.convertCurriences(amount: self.amount, from: self.selectedCurrencyCode)
+                self.debouncedConvertedCurrencies = self.convertCurriences(amount: self.amount, from: self.selectedCurrencyCode, utilising: self.currencyRateData)
             }
             .store(in: &cancellables)
     }
