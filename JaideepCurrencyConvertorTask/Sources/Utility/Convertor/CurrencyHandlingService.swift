@@ -11,12 +11,12 @@ import SwiftData
 
 class CurrencyHandlingService {
     // MARK: Variables
-    private let modelContext: ModelContext
+    private let modelContext: ModelContextProtocol
     private var cancellables = Set<AnyCancellable>()
-    private var currencyRate: CurrencyRateData?
+    var currencyRate: CurrencyRateData?
     
     // MARK: Initialisation
-    init(modelContext: ModelContext) {
+    init(modelContext: ModelContextProtocol) {
         self.modelContext = modelContext
     }
     
@@ -125,9 +125,9 @@ class CurrencyHandlingService {
                 case .finished:
                     debugPrint("Finished successfully.")
                 }
-            } receiveValue: {[weak self] rates in
+            } receiveValue: { rates in
                 completionHandler(.success(rates))
-                Task {
+                Task {[weak self] in
                     await self?.saveFetchedRates(currencyRate: rates)
                 }
             }

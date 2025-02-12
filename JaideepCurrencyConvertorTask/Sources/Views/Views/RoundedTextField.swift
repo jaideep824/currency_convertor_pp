@@ -18,6 +18,7 @@ struct RoundedCurrencyTextField: View {
             .frame(height: 50)
             .background(.appWhite)
             .clipShape(RoundedRectangle(cornerRadius: 12))
+            .tint(.appRed)
     }
 }
 

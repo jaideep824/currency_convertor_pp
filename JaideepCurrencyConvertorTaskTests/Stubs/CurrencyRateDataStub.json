@@ -1,0 +1,20 @@
+[
+    {
+        "timestamp": 1700000000,
+        "base": "USD",
+        "rates": {
+            "EUR": 0.85,
+            "INR": 86.0
+        }
+    },
+    {
+        "timestamp": null,
+        "base": null,
+        "rates": null
+    },
+    {
+        "timestamp": 1700000000,
+        "base": "USD",
+        "rates": {}
+    }
+]
